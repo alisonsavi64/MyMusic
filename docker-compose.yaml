@@ -20,5 +20,15 @@ services:
     networks:
       - laravel
 
+  php-cli:
+    image: composer:2
+    volumes:
+      - .:/app
+    working_dir: /app
+    entrypoint: ["php"]
+    stdin_open: true
+    tty: true
+
+
 networks:
   laravel:
